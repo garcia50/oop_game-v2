@@ -4,7 +4,6 @@
 class Phrase {
   constructor(phrase) {
     this.phrase = phrase.toLowerCase();
-    console.log('made it');
   }
 
 
@@ -45,11 +44,6 @@ class Phrase {
   }
 
 }
-
-
-const phrase = new Phrase('Please Work');
-
-phrase.addPhraseToDisplay();
 
 
 

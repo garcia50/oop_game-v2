@@ -3,13 +3,13 @@
  * app.js */
 
 
+var game;
 
 $('#btn__reset').on('click', () => {
-  let game = new Game();
+  game = new Game();
   game.startGame();
-
 });
 
-// $('#qwerty').on('click', function(){
-
-// });
+$('#qwerty button').on('click', function(e){
+  game.handleInteraction(e.target.innerText);
+});

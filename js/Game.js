@@ -30,8 +30,27 @@ class Game {
   }
 
 
-  handleInteraction() {
-    
+  handleInteraction(letter) {
+    for (var i = 0; i < 3; i++) {
+      var row =  $('div .keyrow').get()[i].children
+      for (let r of row) {
+        if (r.textContent === letter) {
+          r.classList.add('chosen');
+          r.disabled = true;
+        } else {
+          r.classList.add('wrong');
+          // this.removeLife();
+        }
+
+        if (this.activePhrase.indexOf(letter) >= 0 {
+
+        }
+      }
+    }
+
+    console.log(this.activePhrase);
+
+ 
   }
 
 
