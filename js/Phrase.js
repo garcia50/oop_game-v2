@@ -4,6 +4,7 @@
 class Phrase {
   constructor(phrase) {
     this.phrase = phrase.toLowerCase();
+    console.log('made it');
   }
 
 
@@ -17,17 +18,27 @@ class Phrase {
         phraseUl += '<li class="hide letter ${letter}">${letter}</li>';
       }
     });
-      console.log(phraseUl);
-
-
   }
 
 
-
-
-  checkLetter(letter) {
-    letter
+  checkLetter(selectedLetter) {
+    var match = false;
+    var data = [];
+    
+    $('li .hide').each(function() {
+      data.push($(this).text());
+    });
+      
+    data.forEach(letter => {
+      if (selectedLetter === letter) {
+        match = true;
+      } else {
+        match
+      }
+    }) 
+    return match 
   }
+
 
   showMatchedLetter() {
 

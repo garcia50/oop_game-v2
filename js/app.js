@@ -2,14 +2,14 @@
  * Project 4 - OOP Game App
  * app.js */
 
-const game = new Game();
 
 
-
-const startGame = $('#btn__reset').addEventListener('click', () => {
+$('#btn__reset').on('click', () => {
+  let game = new Game();
+  game.startGame();
 
 });
 
-// $('#qwerty').addEventListener('click', function(){
+// $('#qwerty').on('click', function(){
 
 // });
