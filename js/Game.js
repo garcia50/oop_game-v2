@@ -71,11 +71,14 @@ class Game {
     $('#overlay').css('display', 'block');
     
     if (hasVictory) {
+      $('#overlay').removeClass('start');
+      $('#overlay').addClass('win');
       $('#game-over-message').text('YOU WIN!!!');
     } else {
+      $('#overlay').removeClass('start');
+      $('#overlay').addClass('lose');
       $('#game-over-message').text('Try Again');
     }
-
   }
 
 

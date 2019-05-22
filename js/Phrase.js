@@ -23,7 +23,7 @@ class Phrase {
 
 
   checkLetter(button, selectedLetter) {
-    let isChosen = false;
+    let isChosen = true;
     if (this.phrase.indexOf(selectedLetter) >= 0) {
       $(button).addClass('chosen');
       this.showMatchedLetter(selectedLetter)
