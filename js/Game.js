@@ -17,8 +17,7 @@ class Game {
 
 
   startGame() {
-    let overlay = $('#overlay').get();
-    $(overlay[0]).css('display', 'none');
+    $('#overlay').css('display', 'none');
 
     this.activePhrase = this.getRandomPhrases();
     this.activePhrase = new Phrase(this.activePhrase)
@@ -36,21 +35,24 @@ class Game {
   handleInteraction(button) {
     button.disabled = true;
     var letter = button.textContent
-    
-    let isChosen = this.activePhrase.checkLetter(button, letter);
 
+    let isChosen = this.activePhrase.checkLetter(button, letter);
     if (isChosen) {
       this.CheckForWIn();
     } else {
       this.removeLife();
     }
-
-
   }
 
 
   removeLife() {
-    console.log('SUUUUUUUUUUUPPPPP');
+    $('#scoreboard li:first-child').remove();
+    $('#scoreboard').append('<li class="tries"><img src="images/lostHeart.png" alt="Heart Icon" height="35" width="30"></li>');
+
+    this.missed += 1
+    if (this.missed === 5){
+      this.gameOver();
+    }
   }
 
 
@@ -60,7 +62,8 @@ class Game {
 
 
   gameOver() {
-
+    $('#overlay').css('display', 'block');
+    if (this.mi)
   }
 
 

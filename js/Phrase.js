@@ -32,7 +32,6 @@ class Phrase {
       $(button).addClass('wrong');
       isChosen = false;
     } 
-
     return isChosen
   }
 
@@ -43,10 +42,6 @@ class Phrase {
         $(this).addClass('show');
       }
     });
-
-    
-
-
   }
 
 }
