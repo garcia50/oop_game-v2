@@ -57,13 +57,24 @@ class Game {
 
 
   CheckForWIn() {
-    console.log('');
+    if ($('#phrase li').find('hide') && $('#phrase li').find('space') ) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
 
   gameOver() {
+    let hasVictory = this.CheckForWIn();
     $('#overlay').css('display', 'block');
-    if (this.mi)
+    
+    if (hasVictory) {
+      $('#game-over-message').text('YOU WIN!!!');
+    } else {
+      $('#game-over-message').text('Try Again');
+    }
+
   }
 
 
