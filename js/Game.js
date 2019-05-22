@@ -21,6 +21,9 @@ class Game {
     $(overlay[0]).css('display', 'none');
 
     this.activePhrase = this.getRandomPhrases();
+    this.activePhrase = new Phrase(this.activePhrase)
+
+    this.activePhrase.addPhraseToDisplay();
   }
 
 
@@ -30,37 +33,29 @@ class Game {
   }
 
 
-  handleInteraction(letter) {
-    for (var i = 0; i < 3; i++) {
-      var row =  $('div .keyrow').get()[i].children
-      for (let r of row) {
-        if (r.textContent === letter) {
-          r.classList.add('chosen');
-          r.disabled = true;
-        } else {
-          r.classList.add('wrong');
-          // this.removeLife();
-        }
+  handleInteraction(button) {
+    button.disabled = true;
+    var letter = button.textContent
+    
+    let isChosen = this.activePhrase.checkLetter(button, letter);
 
-        if (this.activePhrase.indexOf(letter) >= 0 {
-
-        }
-      }
+    if (isChosen) {
+      this.CheckForWIn();
+    } else {
+      this.removeLife();
     }
 
-    console.log(this.activePhrase);
 
- 
   }
 
 
   removeLife() {
-
+    console.log('SUUUUUUUUUUUPPPPP');
   }
 
 
   CheckForWIn() {
-
+    console.log('');
   }
 
 
