@@ -18,7 +18,7 @@ class Phrase {
         phraseUl += `<li class="hide letter ${letter}">${letter}</li>`;
       }
     });
-      $('#phrase ul').append(phraseUl);
+    $('#phrase ul').append(phraseUl);
   }
 
 
@@ -37,8 +37,9 @@ class Phrase {
 
 
   showMatchedLetter(letter) {
-    $( ".letter" ).each(function( index ) {
+    $(".letter").each(function(index) {
       if (this.innerText === letter) {
+        $(this).removeClass('hide');
         $(this).addClass('show');
       }
     });

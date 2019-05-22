@@ -38,7 +38,9 @@ class Game {
 
     let isChosen = this.activePhrase.checkLetter(button, letter);
     if (isChosen) {
-      this.CheckForWIn();
+      if ( this.CheckForWin() ) {
+        this.gameOver();
+      }
     } else {
       this.removeLife();
     }
@@ -56,17 +58,16 @@ class Game {
   }
 
 
-  CheckForWIn() {
-    if ($('#phrase li').find('hide') && $('#phrase li').find('space') ) {
-      return false;
-    } else {
-      return true;
+  CheckForWin() {
+    if ($('#phrase .hide').length > 0) {
+      return false;  
     }
+    return true
   }
 
 
   gameOver() {
-    let hasVictory = this.CheckForWIn();
+    let hasVictory = this.CheckForWin();
     $('#overlay').css('display', 'block');
     
     if (hasVictory) {
