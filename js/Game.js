@@ -15,7 +15,7 @@ class Game {
     this.activePhrase = null; 
   }
 
-
+  //
   startGame() {
     this.reload();
     $('#overlay').css('display', 'none');
@@ -88,7 +88,10 @@ class Game {
     $('#qwerty button').removeClass('wrong').addClass('key');
     $('#qwerty button').removeClass('chosen').addClass('key');
     $(':button').prop('disabled', false);
-
+    $('#scoreboard li').remove();
+    for (var i = 0; i < 5; i++) {
+      $('#scoreboard ol').append('<li class="tries"><img src="images/liveHeart.png" alt="Heart Icon" height="35" width="30"></li>');
+    }
   }
 
 }
