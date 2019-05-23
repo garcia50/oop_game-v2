@@ -17,6 +17,7 @@ class Game {
 
 
   startGame() {
+    this.reload();
     $('#overlay').css('display', 'none');
 
     this.activePhrase = this.getRandomPhrases();
@@ -82,6 +83,13 @@ class Game {
   }
 
 
+  reload() {
+    $('#phrase ul').empty();
+    $('#qwerty button').removeClass('wrong').addClass('key');
+    $('#qwerty button').removeClass('chosen').addClass('key');
+    $(':button').prop('disabled', false);
+
+  }
 
 }
 

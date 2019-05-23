@@ -1,7 +1,6 @@
-let game;
+var game = new Game();
 
 $('#btn__reset').on('click', () => {
-  game = new Game();
   game.startGame();
 });
 
